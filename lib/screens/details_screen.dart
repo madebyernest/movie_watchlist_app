@@ -14,14 +14,20 @@ class DetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Poster
-            Image.asset(
-              movie.posterPath,
-              height: 320,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
             Padding(
               padding: const EdgeInsets.all(16),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  movie.posterPath,
+                  height: 320,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

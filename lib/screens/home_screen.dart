@@ -18,15 +18,24 @@ class HomeScreen extends StatelessWidget {
           return Card(
             margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             child: ListTile(
+              contentPadding: const EdgeInsets.all(10),
               leading: ClipRRect(
-                borderRadius: BorderRadius.circular(6),
+                borderRadius: BorderRadius.circular(8),
                 child: Image.asset(
                   movie.posterPath,
-                  width: 56,
+                  width: 60,
+                  height: 90,
                   fit: BoxFit.cover,
                 ),
               ),
-              title: Text(movie.title),
+              title: Text(
+                movie.title,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+              ),
+              subtitle: Text(movie.cast.take(2).join(', ')),
               trailing: const Icon(Icons.chevron_right),
               onTap: () {
                 Navigator.push(
